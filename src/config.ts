@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "OLY24",
-  phoneDisplay: import.meta.env.VITE_PHONE_DISPLAY || "",
-  phoneHref: import.meta.env.VITE_PHONE_E164 || "",
+  phoneDisplay: import.meta.env.VITE_PHONE_DISPLAY || "(820) 123-4567",
+  phoneHref: import.meta.env.VITE_PHONE_E164 || "+18201234567",
   siteUrl: import.meta.env.VITE_SITE_URL || "https://oly24.com",
   ga4Id: import.meta.env.VITE_GA4_ID || "",
   metaPixelId: import.meta.env.VITE_META_PIXEL_ID || "",
