@@ -1,0 +1,7 @@
+name = "oly24"
+compatibility_date = "2025-01-15"
+pages_build_output_dir = "./dist"
+
+[vars]
+PUBLIC_SITE_URL = "https://oly24.com"
+# Set LEAD_WEBHOOK_URL as a secret in Cloudflare Pages; never commit credentials.
