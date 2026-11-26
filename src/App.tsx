@@ -237,6 +237,121 @@ function ServiceLanding({ service }: { service: ServiceKey }) {
   </>;
 }
 
+
+const heatingProblems = [
+  {
+    title: "Furnace Not Working",
+    symptom: "Cold air from the vents or a system that keeps shutting down.",
+    causes: "A dirty filter, power issue, or ignition or flame-sensor problem."
+  },
+  {
+    title: "No Heat in the House",
+    symptom: "The heating unit may run, but the home stays cold.",
+    causes: "A clogged filter, pilot-light outage, gas-supply issue, or a boiler problem such as trapped air or low water pressure."
+  },
+  {
+    title: "Furnace Won't Turn On",
+    symptom: "The system does not respond when the thermostat calls for heat.",
+    causes: "A tripped breaker, dead thermostat batteries, an access-panel safety switch, or a control-board fuse."
+  },
+  {
+    title: "Uneven Heating",
+    symptom: "Some rooms are warm while others remain cold.",
+    causes: "Blocked vents, restricted duct airflow, or air and sludge buildup in boiler radiators."
+  },
+  {
+    title: "Strange Furnace Noises",
+    symptom: "Whistling, rattling, banging, or high-pitched whining during operation.",
+    causes: "Airflow restrictions, loose panels or connections, delayed burner ignition, duct pressure changes, or mineral deposits in a boiler heat exchanger."
+  }
+];
+
+const heatingFaqs = [
+  {
+    q: "Why is my furnace blowing cold air?",
+    a: "A clogged filter, pilot-light or ignition issue, interrupted fuel supply, or system shutdown may be involved. Check the thermostat setting and filter. If the problem continues, arrange a qualified HVAC inspection."
+  },
+  {
+    q: "What should I check if my furnace won't turn on?",
+    a: "Confirm the thermostat is set to Heat and above the current room temperature. Check its batteries if the display is blank. You can also check the accessible furnace power switch, the properly seated external access panel, and whether a breaker has tripped."
+  },
+  {
+    q: "Why does my furnace start and then stop?",
+    a: "Restricted airflow, overheating and safety shut-offs, or a component problem may cause repeated cycling. Check whether the air filter is visibly clogged. Do not bypass safety switches; contact a qualified technician if it continues."
+  },
+  {
+    q: "What if my heat pump runs but does not heat?",
+    a: "A heat pump that runs without warming the home needs a system-specific assessment. Explore heating service options in your area for help identifying the cause."
+  }
+];
+
+function HeatingLanding() {
+  return <>
+    <section className="service-hero heating-hero">
+      <div className="container service-hero-inner">
+        <div className="service-hero-copy">
+          <span className="eyebrow eyebrow-light">HOME HEATING • HVAC SUPPORT</span>
+          <h1>Furnace not working or blowing cold air?</h1>
+          <p>Find information about common heating problems and safe first checks, then explore connections with independent heating service providers in your area.</p>
+          <div className="hero-actions">
+            <a className="button button-orange" href="#service-request" onClick={() => trackEvent("heating_zip_cta_click")}>Check your ZIP code <ArrowRight size={18} /></a>
+            <PhoneAction />
+          </div>
+          <div className="heating-hero-tags"><span>Furnace won't turn on</span><span>No heat in the house</span><span>Furnace starts then stops</span></div>
+        </div>
+        <div className="service-hero-icon"><Flame size={112} strokeWidth={1.2} /></div>
+      </div>
+    </section>
+
+    <section className="heating-quick section-pad">
+      <div className="container">
+        <div className="section-heading"><div><span className="eyebrow">FIND YOUR ISSUE</span><h2>What is your heating system doing?</h2></div><p>Select the description closest to what you are experiencing. Causes can vary by system and home.</p></div>
+        <div className="heating-problem-grid">
+          {heatingProblems.map((problem, index) => <article className="heating-problem-card" key={problem.title}>
+            <span className="problem-number">{String(index + 1).padStart(2, "0")}</span>
+            <h3>{problem.title}</h3>
+            <p>{problem.symptom}</p>
+            <div className="possible-causes"><b>Possible causes</b><p>{problem.causes}</p></div>
+          </article>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="section-pad heating-first-steps">
+      <div className="container">
+        <div className="section-heading"><div><span className="eyebrow">SAFE FIRST CHECKS</span><h2>Before you request heating help</h2></div><p>Only perform simple checks that you can do safely. Do not open sealed equipment compartments or attempt gas or electrical repairs.</p></div>
+        <div className="first-step-grid">
+          <article><span>01</span><h3>Thermostat</h3><p>Set it to <b>Heat</b> and choose a temperature above the current room temperature. Check the batteries if the display is blank.</p></article>
+          <article><span>02</span><h3>Air filter</h3><p>Look for visible dust buildup. Replace a clogged filter with the correct type and size, following the equipment instructions.</p></article>
+          <article><span>03</span><h3>Power and access panel</h3><p>Check the accessible furnace power switch and make sure the external access panel is properly seated. If a breaker trips again, do not keep resetting it.</p></article>
+        </div>
+        <div className="heating-safety-alert">
+          <Siren size={26}/>
+          <div><b>Smell gas, suspect carbon monoxide, or see smoke?</b><p>Do not operate electrical switches or use flames. Leave immediately. From a safe location, call emergency services or your gas provider. Do not re-enter until authorities say it is safe.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section className="heating-faq-section section-pad">
+      <div className="container heating-faq-layout">
+        <div><span className="eyebrow">QUICK ANSWERS</span><h2>Heating questions</h2><p>Still unsure what may be happening? Review these common questions or explore local service connections.</p><a href="#service-request" className="text-link">Find heating options in your area <ArrowUpRight size={17}/></a></div>
+        <div className="heating-faq-list">
+          {heatingFaqs.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="request-section section-pad">
+      <div className="container request-layout">
+        <div className="request-copy"><span className="eyebrow">FIND LOCAL OPTIONS</span><h2>Need heating help<br/><em>in your area?</em></h2><p>Enter your US ZIP code and describe the heating issue. OLY24 helps visitors explore connections with independent service providers. Availability varies by location.</p><div className="request-assurance"><CheckCircle2 /> Start with your ZIP code and issue.</div><TrustNote /></div>
+        <LeadForm defaultService="Heating"/>
+      </div>
+    </section>
+    <section className="bottom-cta"><div className="container bottom-cta-inner"><div><span className="eyebrow eyebrow-light">OLY24 • HEATING CONNECTIONS</span><h2>Take the next step toward heat.</h2></div><a href="#service-request" className="button button-orange">Check your ZIP code <ArrowRight size={18}/></a></div></section>
+  </>;
+}
+
+
 function PrivacyPage() {
   return <main className="legal-page container section-pad"><span className="eyebrow">OLY24</span><h1>Privacy Policy</h1><p className="legal-updated">Last updated: November 24, 2026</p><h2>Information you provide</h2><p>When you submit a service request, OLY24 may collect your name, email address, ZIP code, selected service and the description you choose to provide.</p><h2>How information is used</h2><p>Information is used to receive and respond to your request, evaluate service availability and, where applicable, help connect you with independent home service providers. Information may be shared with a provider when needed to respond to the request and as permitted by applicable law.</p><h2>Analytics and advertising</h2><p>OLY24 may use analytics or advertising measurement technologies if configured. These technologies may collect device, browser, page-view and campaign information. Applicable consent and opt-out requirements should be honored before enabling non-essential tracking.</p><h2>Data security and retention</h2><p>Reasonable safeguards should be used to protect submitted information. Information should be retained only as long as needed for the purposes described or as required by law.</p><h2>Your choices</h2><p>To ask a question about a request or privacy practice, contact the site operator using the contact details published on this website. Do not submit sensitive personal, financial or medical information through the service request form.</p><h2>Independent providers</h2><p>Service providers are independent third parties and are not employees or agents of OLY24 unless expressly stated in a separate written agreement. Their services, pricing, availability, credentials and privacy practices may differ.</p><p className="legal-note">This starter policy is a drafting baseline and must be reviewed and completed for the actual business, data flows, jurisdictions and vendors before launch.</p></main>;
 }
@@ -274,14 +389,29 @@ export default function App() {
     const titles: Record<string, string> = {
       home: "OLY24 | Heating & Plumbing Service Connections",
       privacy: "Privacy Policy | OLY24",
-      heating: "Heating Service Connections | OLY24",
+      heating: "Furnace Not Working? Heating Help & Service Connections | OLY24",
       plumbing: "Plumbing Service Connections | OLY24",
       "frozen-pipes": "Frozen Pipe Help | OLY24",
       "water-leaks": "Water Leak Support | OLY24"
     };
     document.title = titles[route] || titles.home;
+    const descriptions: Record<string, string> = {
+      home: "Explore heating and plumbing service connections with independent providers. Check options by US ZIP code.",
+      heating: "Furnace not working, blowing cold air, or not turning on? Learn common symptoms and safe first checks, then explore local heating service connections.",
+      plumbing: "Explore connections with independent plumbing service providers for common plumbing concerns in your area.",
+      "frozen-pipes": "Learn what to do about suspected frozen pipes and explore connections with independent plumbing providers in your area.",
+      "water-leaks": "Learn practical first steps for a water leak and explore connections with independent plumbing providers in your area.",
+      privacy: "Read how OLY24 handles information submitted through its home service connection website."
+    };
+    let description = document.querySelector('meta[name="description"]');
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+    description.setAttribute("content", descriptions[route] || descriptions.home);
     trackEvent("page_view", { page: route });
   }, [route]);
 
-  return <><Header />{route === "home" ? <HomePage /> : route === "privacy" ? <PrivacyPage /> : <ServiceLanding service={route as ServiceKey} />}<Footer /><CookieConsent /></>;
+  return <><Header />{route === "home" ? <HomePage /> : route === "privacy" ? <PrivacyPage /> : route === "heating" ? <HeatingLanding /> : <ServiceLanding service={route as ServiceKey} />}<Footer /><CookieConsent /></>;
 }
