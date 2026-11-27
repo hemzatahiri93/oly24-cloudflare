@@ -305,14 +305,14 @@ const heatingFaqs = [
 
 const heatingMediaSlots = {
   inspectionPhoto: {
-    src: "",
+    src: "/images/heating-inspection.webp",
     alt: "Technician inspecting a home heating system",
-    label: "Heating system inspection image slot — set heatingMediaSlots.inspectionPhoto.src"
+    label: "Heating system inspection image slot — /images/heating-inspection.webp"
   },
   filterPhoto: {
-    src: "",
+    src: "/images/heating-filter.webp",
     alt: "HVAC air filter check for home heating maintenance",
-    label: "HVAC filter check image slot — set heatingMediaSlots.filterPhoto.src"
+    label: "HVAC filter check image slot — /images/heating-filter.webp"
   }
 };
 
@@ -521,14 +521,14 @@ const plumbingFaqs = [
 
 const plumbingMediaSlots = {
   inspectionPhoto: {
-    src: "",
+    src: "/images/plumbing-inspection.webp",
     alt: "Plumber checking home plumbing lines and fixtures",
-    label: "Plumbing inspection image slot — set plumbingMediaSlots.inspectionPhoto.src"
+    label: "Plumbing inspection image slot — /images/plumbing-inspection.webp"
   },
   fixturePhoto: {
-    src: "",
+    src: "/images/plumbing-shutoff.webp",
     alt: "Home water shut-off valve and sink plumbing check",
-    label: "Plumbing shut-off and fixture image slot — set plumbingMediaSlots.fixturePhoto.src"
+    label: "Plumbing shut-off and fixture image slot — /images/plumbing-shutoff.webp"
   }
 };
 
@@ -709,14 +709,14 @@ const frozenPipesFaqs = [
 
 const frozenPipesMediaSlots = {
   inspectionPhoto: {
-    src: "",
+    src: "/images/frozen-pipe.webp",
     alt: "Inspecting exposed home water pipes during freezing temperatures",
-    label: "Frozen pipe inspection image slot — set frozenPipesMediaSlots.inspectionPhoto.src"
+    label: "Frozen pipe inspection image slot — /images/frozen-pipe.webp"
   },
   shutoffPhoto: {
-    src: "",
+    src: "/images/frozen-shutoff.webp",
     alt: "Main home water shut-off valve and indoor pipe protection",
-    label: "Main shut-off valve image slot — set frozenPipesMediaSlots.shutoffPhoto.src"
+    label: "Main shut-off valve image slot — /images/frozen-shutoff.webp"
   }
 };
 
@@ -897,14 +897,14 @@ const waterLeaksFaqs = [
 
 const waterLeaksMediaSlots = {
   inspectionPhoto: {
-    src: "",
+    src: "/images/water-leak-ceiling.webp",
     alt: "Inspecting household plumbing and water meter for hidden water leaks",
-    label: "Water leak inspection image slot — set waterLeaksMediaSlots.inspectionPhoto.src"
+    label: "Water leak inspection image slot — /images/water-leak-ceiling.webp"
   },
   shutoffPhoto: {
-    src: "",
+    src: "/images/water-leak-meter.webp",
     alt: "Under-sink supply lines and water shut-off valve inspection",
-    label: "Under-sink shutoff valve image slot — set waterLeaksMediaSlots.shutoffPhoto.src"
+    label: "Under-sink shutoff valve image slot — /images/water-leak-meter.webp"
   }
 };
 
